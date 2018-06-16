@@ -1,0 +1,35 @@
+html, body {
+  background-color: #263238;
+  color: #ECEFF1;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #37474F;
+}
+
+th, td {
+  border: 1px solid #37474F;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+td.warn{
+  background-color: rgba(255,0,0,0.5);
+}
+
+md-select md-select-value{
+  border-bottom-color: #ECEFF1 !important;
+}
+
+.md-select-icon{
+  color: #ECEFF1 !important;
+}
+
+md-select:not([disabled]):focus .md-select-value{
+  color: #ECEFF1 !important;
+}
