@@ -1,0 +1,2 @@
+import adminClass
+adminClass.objAdminClass()
