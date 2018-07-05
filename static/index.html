@@ -1,25 +1,41 @@
 <html lang="en" >
 <head>
-    <title>Hello World</title>
+    <title>Sakila</title>
+
+    <script src="js/framework/angular.min.js"></script>
+    <script src="js/framework/angular-animate.min.js"></script>
+    <script src="js/framework/angular-aria.min.js"></script>
+    <script src="js/framework/angular-messages.min.js"></script>
+    <script src="js/framework/angular-route.min.js"></script>
+    <script src="js/framework/angular-material.min.js"></script>
+    <script src="js/framework/plotly.js"></script>
+    <link rel="stylesheet" href="styles/angular-material.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script type="text/javascript" src='js/app.js'></script>
+    <script type="text/javascript" src='js/services/dataService.js'></script>
+    <script type="text/javascript" src='js/controllers/ctrlMain.js'></script>
 </head>
 
 <body ng-app="myApp" ng-controller="ctrlMain">
+    <md-toolbar>
+        <h3>{{ pageTitle }}</h3>
+    </md-toolbar>
 
-    <div>
-        {{ screenMsg }}
-        <br />
-        {{ screenMsgFunc() }}
-    </div>
+    <md-tabs md-selected="selectedIndex">
+        <!-- i represents db table name. item is object (table) data  -->
+        <md-tab ng-repeat="(strTblName, objTableData) in data" label="{{ strTblName }}">
+            <md-tab-body>
+                <table>
+                    <th ng-repeat="(key, val) in objTableData[0]">{{ key }}</th>
+                    <tr ng-repeat="(i, tblDataRec) in objTableData">
+                        <td ng-repeat="fieldData in tblDataRec">{{ fieldData }}</td>
+                    </tr>
+                </table>
+            </md-tab-body>
+        </md-tab>
+    </md-tabs>
 
-    <script src='js/framework/angular.min.js'></script>
-    <script src='js/framework/angular-animate.min.js'></script>
-    <script src='js/framework/angular-aria.min.js'></script>
-    <script src='js/framework/angular-material.min.js'></script>
-    <script src='js/framework/angular-messages.min.js'></script>
-    <script src='js/framework/angular-route.min.js'></script>
-
-    <script type="text/javascript" src='js/app.js'></script>
-    <script type="text/javascript" src='js/controllers/ctrlMain.js'></script>
 
 </body>
 </html>
